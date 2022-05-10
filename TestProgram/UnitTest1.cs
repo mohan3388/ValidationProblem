@@ -13,7 +13,13 @@ namespace TestProgram
             bool value = problem.ValidateName("Mohan");
             Assert.IsTrue(value);
         }
+        [Test]
+        public void Valid_Last_Name()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateLastname("Sahu");
+            Assert.IsTrue(value);
+        }
 
-       
     }
 }

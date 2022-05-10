@@ -13,8 +13,15 @@ namespace UserRegistrationValidation
                 return true;
             }
         }
-        
-       
-        
+        public bool ValidateLastname(string lastname)
+        {
+            if (Regex.IsMatch(lastname, Name_Pattern)) ;
+            {
+                Console.WriteLine("Valid last name " + lastname);
+                return true;
+            }
+        }
+
+
     }
 }
