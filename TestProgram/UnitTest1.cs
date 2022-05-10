@@ -20,6 +20,13 @@ namespace TestProgram
             bool value = problem.ValidateLastname("Sahu");
             Assert.IsTrue(value);
         }
+        [Test]
+        public void Valid_Email()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateEmail("Mohan@123gmail.com");
+            Assert.IsTrue(value);
+        }
 
     }
 }

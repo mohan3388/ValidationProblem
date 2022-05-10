@@ -4,7 +4,7 @@ namespace UserRegistrationValidation
     public class Validation
     {
         public const string Name_Pattern = "^[A-Z]{1}[A-Za-z]$";
-      
+        public const string Email_Pattern = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public bool ValidateName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -22,6 +22,13 @@ namespace UserRegistrationValidation
             }
         }
 
-
+        public bool ValidateEmail(string Email)
+        {
+            if (Regex.IsMatch(Email, Email_Pattern)) ;
+            {
+                Console.WriteLine("Valid last name " + Email);
+                return true;
+            }
+        }
     }
 }
