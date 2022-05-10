@@ -27,6 +27,12 @@ namespace TestProgram
             bool value = problem.ValidateEmail("Mohan@123gmail.com");
             Assert.IsTrue(value);
         }
-
+        [Test]
+        public void Valid_Mobile()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateMobile("7898625487");
+            Assert.IsTrue(value);
+        }
     }
 }
