@@ -34,5 +34,12 @@ namespace TestProgram
             bool value = problem.ValidateMobile("7898625487");
             Assert.IsTrue(value);
         }
+        [Test]
+        public void Valid_Password()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidatePassword("Mohan@12");
+            Assert.IsTrue(value);
+        }
     }
 }
