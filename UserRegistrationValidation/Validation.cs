@@ -9,6 +9,7 @@ namespace UserRegistrationValidation
         public const string Password_Pattern = "^[@*_$%&]{1}[0-9A-Za-z]{8,}$";
         public const string Password_One_Uppercase_Pattern = "^[A-Z]{1}[@*_$%&]{1}[0-9A-Za-z]{7,}$";
         public const string Password_One_Numeric_Pattern = "^[0-9]{1}[@*_$%&]{1}[0-9A-Za-z]{7,}$";
+        public const string Password_OneSpecial_Pattern = "^[@*_$%&]{1}[0-9A-Za-z]{8,}$";
         public bool ValidateName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -62,7 +63,15 @@ namespace UserRegistrationValidation
         {
             if (Regex.IsMatch(password, Password_One_Numeric_Pattern)) ;
             {
-                Console.WriteLine("Valid Uppercase Password" + password);
+                Console.WriteLine("Valid Numeric Password" + password);
+                return true;
+            }
+        }
+        public bool ValidateOneSpecialPassword(string password)
+        {
+            if (Regex.IsMatch(password, Password_OneSpecial_Pattern)) ;
+            {
+                Console.WriteLine("Valid special Password" + password);
                 return true;
             }
         }

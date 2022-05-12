@@ -55,5 +55,13 @@ namespace TestProgram
             bool value = problem.ValidateOneNumericPassword("Mohan@12");
             Assert.IsTrue(value);
         }
+
+        [Test]
+        public void Valid_One_Special_Password2()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateOneSpecialPassword("Mohan@12");
+            Assert.IsTrue(value);
+        }
     }
 }
