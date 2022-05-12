@@ -7,7 +7,8 @@ namespace UserRegistrationValidation
         public const string Email_Pattern = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public const string Mobile_Pattern = "^[6-9]{1}[0-9]{9}$";
         public const string Password_Pattern = "^[@*_$%&]{1}[0-9A-Za-z]{8,}$";
-        public const string Password_Pattern2 = "^[A-Z]{1}[@*_$%&]{1}[0-9A-Za-z]{7,}$";
+        public const string Password_One_Uppercase_Pattern = "^[A-Z]{1}[@*_$%&]{1}[0-9A-Za-z]{7,}$";
+        public const string Password_One_Numeric_Pattern = "^[0-9]{1}[@*_$%&]{1}[0-9A-Za-z]{7,}$";
         public bool ValidateName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -49,11 +50,19 @@ namespace UserRegistrationValidation
                 return true;
             }
         }
-        public bool ValidateUpperCasePassword(string password2)
+        public bool ValidateUpperCasePassword(string password)
         {
-            if (Regex.IsMatch(password2, Password_Pattern)) ;
+            if (Regex.IsMatch(password, Password_One_Uppercase_Pattern)) ;
             {
-                Console.WriteLine("Valid Uppercase Password" + password2);
+                Console.WriteLine("Valid Uppercase Password" + password);
+                return true;
+            }
+        }
+        public bool ValidateOneNumericPassword(string password)
+        {
+            if (Regex.IsMatch(password, Password_One_Numeric_Pattern)) ;
+            {
+                Console.WriteLine("Valid Uppercase Password" + password);
                 return true;
             }
         }

@@ -42,10 +42,17 @@ namespace TestProgram
             Assert.IsTrue(value);
         }
         [Test]
-        public void Valid_Password2()
+        public void Valid_One_Uppercase_Password2()
         {
             Validation problem = new Validation();
             bool value = problem.ValidateUpperCasePassword("Mohan@12");
+            Assert.IsTrue(value);
+        }
+        [Test]
+        public void Valid_One_Numeric_Password2()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateOneNumericPassword("Mohan@12");
             Assert.IsTrue(value);
         }
     }
