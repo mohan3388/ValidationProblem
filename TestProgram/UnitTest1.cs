@@ -41,5 +41,12 @@ namespace TestProgram
             bool value = problem.ValidatePassword("Mohan@12");
             Assert.IsTrue(value);
         }
+        [Test]
+        public void Valid_Password2()
+        {
+            Validation problem = new Validation();
+            bool value = problem.ValidateUpperCasePassword("Mohan@12");
+            Assert.IsTrue(value);
+        }
     }
 }
